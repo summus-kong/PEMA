@@ -1,6 +1,6 @@
 # PEMA ![](https://img.shields.io/badge/version-v0.1.0-blue)
 A computational framework to characterize metabolic states of human and mouse pre-implantation embryos using RNA-seq and Ribo-seq data.
-![image](https://github.com/summus-kong/PEMA/blob/main/PEMA%20framework.png)
+![image](https://github.com/summus-kong/PEMA/blob/main/PEMA.png)
 
 ## Help massage
 ```
