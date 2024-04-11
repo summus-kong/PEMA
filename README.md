@@ -4,9 +4,11 @@ A computational framework to characterize metabolic states of human and mouse pr
 
 ## Help massage
 ```
+code: python PEMA -h
+
 usage: PEMA -r file -R file -s <str> -o file [-p <int>] [-h] [-v]
 
-Peri-implantation Embryos Metabolic Analysis
+Pre-implantation Embryos Metabolic Analysis
 
 Required Arguments:
   Parameters must be supplied, otherwise throw an exception.
