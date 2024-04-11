@@ -18,7 +18,7 @@ def parseArguments():
     """
     parser = argparse.ArgumentParser(prog='PEMA',
                                      add_help=False,
-                                     description='Peri-implantation Embryos Metabolic Analysis',
+                                     description='Pre-implantation Embryos Metabolic Analysis',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     required = parser.add_argument_group('Required Arguments',
                                          'Parameters must be supplied, otherwise throw an exception.')
