@@ -16,9 +16,6 @@ Required Arguments:
   -r file, --input_rna file
                         Gene expression matrix. Should be a tsv file with one row per gene and one column per sample or
                         embryo. (default: None)
-  -R file, --input_ribo file
-                        Rib-seq signal. Should be a tsv file with one row per gene and one column per sample or embryo.
-                        (default: None)
   -s <str>, --species <str>
                         Species to use to match genes to model. ['homo_sapiens', 'mus_musculus'] (default: homo_sapiens)
   -o file, --output file
@@ -27,9 +24,16 @@ Required Arguments:
 Optional Arguments:
   Specify additional non-essential parameters.
 
+  -R file, --input_ribo file
+                        Rib-seq signal. Should be a tsv file with one row per gene and one column per sample or embryo.
+                        (default: None)
+  -c <str>, --choose <str>
+                        choosing calculate script, a is Ribo-seq, b is weighted value.
+                        (default: None)
   -p <int>, --threads <int>
                         # of threads (default: 1)
   -h, --help            show this help message and exit.
   -v, --version         Print version information and exit.
 ```
 
+If there is no Ribo-seq data, you can use weighted value calculated in data fold during pre-implanation embryos, and arrange your table according your number of samples, then assign -R <file> and -c b.
