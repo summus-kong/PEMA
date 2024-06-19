@@ -18,7 +18,7 @@ def parseArguments():
     """
     parser = argparse.ArgumentParser(prog='PEMA',
                                      add_help=False,
-                                     description='Pre-implantation Embryos Metabolic Analysis',
+                                     description='Peri-implantation Embryos Metabolic Analysis',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     required = parser.add_argument_group('Required Arguments',
                                          'Parameters must be supplied, otherwise throw an exception.')
@@ -27,11 +27,6 @@ def parseArguments():
                           metavar='file',
                           required=True,
                           help='Gene expression matrix. Should be a tsv file with one row per gene and one column per sample or embryo.')
-    required.add_argument('-R', '--input_ribo',
-                          type=str,
-                          metavar='file',
-                          required=True,
-                          help='Rib-seq signal. Should be a tsv file with one row per gene and one column per sample or embryo.')
     required.add_argument('-s', '--species',
                           type=str,
                           metavar='<str>',
@@ -46,6 +41,17 @@ def parseArguments():
                           help='weighted reaction score matrix')
     optional = parser.add_argument_group('Optional Arguments',
                                          'Specify additional non-essential parameters.')
+    optional.add_argument('-R', '--input_ribo',
+                          type=str,
+                          metavar='file',
+                          required=False,
+                          help='Rib-seq signal. Should be a tsv file with one row per gene and one column per sample or embryo.')
+    optional.add_argument('-c', '--choose',
+                          type='str',
+                          metavar='<str>',
+                          choices=['a', 'b'],
+                          required=False,
+                          help='choosing calculate script, a is Ribo-seq, b is weighted value.')
     optional.add_argument('-p', '--threads',
                           type=int,
                           metavar='<int>',

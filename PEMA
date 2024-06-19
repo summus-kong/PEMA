@@ -17,6 +17,7 @@ inribo = args.input_ribo
 species = args.species
 out = args.output
 threads = args.threads
+choose = args.choose
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
@@ -53,8 +54,13 @@ def run():
 
     # 02
     out1 = out + '/' + 'reactions.tsv'
-    outw = out + '/' + 'weighted_reactions.txt'
-    cmdribo = ['Rscript', 'calculate.R', out1, inribo, species, outw]
+    if choose == 'a':
+        outw = out + '/' + 'weighted_reactions.txt'
+        cmdribo = ['Rscript', 'calculate.R', out1, inribo, species, outw]
+    elif choose == 'b':
+        outw = out + '/' + 'weighted_reactions.txt'
+        cmdribo = ['Rscript', 'calculateal.R', out1, inribo, species, outw]
+    else: print('Error!')
     try:
         # logging.info(f'Codes: {ut.covert_cmd(cmd)}')
         res = ut.run_biotools(ut.covert_cmd(cmd))
